@@ -1,3 +1,0 @@
-google-cloud-vision==0.39.0
-google-cloud-storage==1.18.0
-Pillow==6.1.0
