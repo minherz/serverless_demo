@@ -13,8 +13,8 @@ gcloud services enable compute.googleapis.com cloudfunctions.googleapis.com pubs
 
 echo "Creating buckets..."
 region=europe-west2
-gsutil mb -l $region -p $1 gs://devzone-demo-input
-gsutil mb -l $region -p $1 gs://devzone-demo-output
+gsutil mb -l $region -p $1 gs://$1-input
+gsutil mb -l $region -p $1 gs://$1-output
 
 echo "Creating app engine..."
 gcloud app create --region=$region

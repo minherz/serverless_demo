@@ -6,4 +6,4 @@ handlers:
   script: auto
 
 env_variables:
-  INPUT_BUCKET_NAME: devzone-demo-input
+  INPUT_BUCKET_NAME: -input
