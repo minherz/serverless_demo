@@ -1,0 +1,9 @@
+runtime: go112
+#service: image-ingester
+
+handlers:
+- url: /.*
+  script: auto
+
+env_variables:
+  INPUT_BUCKET_NAME: devzone-demo-input
