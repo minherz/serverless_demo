@@ -14,5 +14,7 @@
 # limitations under the License.
 
 region=europe-west2
-project_id=`gcloud config get-value project`
-gcloud functions deploy face-detector --entry-point detect_faces --runtime python37 --trigger-bucket $project_id-input --source ../face-detector --set-env-vars RESULTS_BUCKET_NAME=$project_id-output --region $region
+trigger_bucket_name=`gcloud config get-value project`-input
+results_bucket_name=`gcloud config get-value project`-output
+
+gcloud functions deploy face-detector --entry-point detect_faces --runtime python37 --trigger-bucket $trigger_bucket_name --set-env-vars RESULTS_BUCKET_NAME=$results_bucket_name --region $region

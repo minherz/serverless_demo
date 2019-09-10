@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-project_id=`gcloud config get-value project`
-sed -i 's/  INPUT_BUCKET_NAME: PLACE_BUCKET_NAME_HERE/  INPUT_BUCKET_NAME: '$project_id'-input/g' app.yaml
+bucket_name=`gcloud config get-value project`-input
+sed -i 's/  INPUT_BUCKET_NAME: PLACE_BUCKET_NAME_HERE/  INPUT_BUCKET_NAME: '$bucket_name'/g' app.yaml
 gcloud app deploy --quiet
-sed -i 's/  INPUT_BUCKET_NAME: '$project_id'-input/  INPUT_BUCKET_NAME: PLACE_BUCKET_NAME_HERE/g' app.yaml
+sed -i 's/  INPUT_BUCKET_NAME: '$project_id'/  INPUT_BUCKET_NAME: PLACE_BUCKET_NAME_HERE/g' app.yaml
