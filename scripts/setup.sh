@@ -22,7 +22,7 @@ echo "Setting '$1' as current project..."
 gcloud config set project $1
 
 echo "Enabling APIs..."
-gcloud services enable compute.googleapis.com cloudfunctions.googleapis.com pubsub.googleapis.com vision.googleapis.com vision.googleapis.com
+gcloud services enable compute.googleapis.com cloudfunctions.googleapis.com pubsub.googleapis.com vision.googleapis.com
 
 echo "Creating buckets..."
 region=europe-west2
