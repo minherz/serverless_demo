@@ -16,4 +16,4 @@
 bucket_name=`gcloud config get-value project`-input
 sed -i 's/  INPUT_BUCKET_NAME: PLACE_BUCKET_NAME_HERE/  INPUT_BUCKET_NAME: '$bucket_name'/g' app.yaml
 gcloud app deploy --quiet
-sed -i 's/  INPUT_BUCKET_NAME: '$project_id'/  INPUT_BUCKET_NAME: PLACE_BUCKET_NAME_HERE/g' app.yaml
+sed -i 's/  INPUT_BUCKET_NAME: '$bucket_name'/  INPUT_BUCKET_NAME: PLACE_BUCKET_NAME_HERE/g' app.yaml
